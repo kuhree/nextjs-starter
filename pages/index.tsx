@@ -20,14 +20,12 @@ const styles = {
 
 export default function LandingPage() {
   return (
-    <>
-      <section css={styles.section}>
-        <h1 className="display">Big Title, Says Something</h1>
-        <p className="tagline">
-          Some tagline feature that makes you want to use this thing because
-          It’s very important.
-        </p>
-      </section>
-    </>
+    <section css={styles.section}>
+      <h1 className="display">Big Title, Says Something</h1>
+      <p className="tagline">
+        Some tagline feature that makes you want to use this thing because It’s
+        very important.
+      </p>
+    </section>
   );
 }
