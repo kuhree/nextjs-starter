@@ -1,6 +1,5 @@
-import { ThemeColors } from '../../theme';
-
-const colors: ThemeColors = {
+export type BaseColors = typeof colors;
+export const colors = {
   text: '#000',
   background: '#fafaff',
   primary: '#11e',
@@ -11,16 +10,6 @@ const colors: ThemeColors = {
   success: '#37be37',
   info: '#17a2b8',
   warning: '#ffc10a',
-  modes: {
-    dark: {
-      text: '#fff',
-      background: '#000',
-      primary: '#0fc',
-      secondary: '#0cf',
-      highlight: '#f0c',
-      muted: '#011',
-    },
-  },
 
   whiteAlpha: {
     50: 'rgba(255, 255, 255, 0.04)',
@@ -256,5 +245,3 @@ const colors: ThemeColors = {
     900: '#003f5e',
   },
 };
-
-export default colors;

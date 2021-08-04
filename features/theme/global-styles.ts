@@ -10,8 +10,8 @@ export const globalStyles: ThemedStyles = (theme) => css`
   *:after {
     margin: 0;
     padding: 0;
+    z-index: ${theme.zIndices['auto']};
     box-sizing: border-box;
-    border: ${theme.borders['2px']} transparent;
   }
 
   html,
@@ -21,7 +21,6 @@ export const globalStyles: ThemedStyles = (theme) => css`
     overflow-x: hidden;
     background-color: ${theme.colors.background};
     color: ${theme.colors.text};
-    z-index: ${theme.zIndices['auto']};
 
     *:focus {
       outline: ${theme.borders['2px']} ${theme.colors['info']};
@@ -48,18 +47,23 @@ export const globalStyles: ThemedStyles = (theme) => css`
       font-size: ${theme.fontSizes['5xl']};
     }
   }
+
   h2 {
     font-size: ${theme.fontSizes['2xl']};
   }
+
   h3 {
     font-size: ${theme.fontSizes['xl']};
   }
+
   h4 {
     font-size: ${theme.fontSizes['lg']};
   }
+
   h5 {
     font-size: ${theme.fontSizes['md']};
   }
+
   h6 {
     font-size: ${theme.fontSizes['sm']};
   }
@@ -93,11 +97,12 @@ export const globalStyles: ThemedStyles = (theme) => css`
   }
 
   a {
-    text-decoration: none;
+    text-decoration: underline;
     color: ${theme.colors.text};
   }
 
   img {
     max-width: 100%;
+    height: auto;
   }
 `;

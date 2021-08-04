@@ -1,9 +1,22 @@
 import { css } from '@emotion/core';
-import { Theme } from 'features/theme';
-import React from 'react';
+import * as React from 'react';
+import { ComponentStyles } from '../features/theme';
 
-const styles = {
-  section: (theme: Theme) => css`
+export default function LandingPage() {
+  return (
+    <section css={styles.wrapper}>
+      <h1 className="display">Big Title, Says Something</h1>
+
+      <p className="tagline">
+        Some tagline feature that makes you want to use this thing because It’s
+        very important.
+      </p>
+    </section>
+  );
+}
+
+const styles: ComponentStyles = {
+  wrapper: (theme) => css`
     max-width: ${theme.space['2xl']};
     text-align: center;
     margin: 0 auto ${theme.space[8]};
@@ -17,15 +30,3 @@ const styles = {
     }
   `,
 };
-
-export default function LandingPage() {
-  return (
-    <section css={styles.section}>
-      <h1 className="display">Big Title, Says Something</h1>
-      <p className="tagline">
-        Some tagline feature that makes you want to use this thing because It’s
-        very important.
-      </p>
-    </section>
-  );
-}

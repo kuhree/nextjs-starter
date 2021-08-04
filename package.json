@@ -1,51 +1,40 @@
 {
   "name": "@gvempire/nextjs-starter",
   "version": "0.0.4",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
     "start": "next",
     "build": "next build",
-    "build:docs": "typedoc --out docs --tsconfig ./typedoc.config.json --categorizeByGroup true --includeDeclarations --excludeExternals --name \"Next-Starter\" --includeVersion --readme ./README.md ",
-    "build:docs-json": "typedoc --out docs --exclude \"**/*.test.(ts|tsx)\" --json --name \"NextJs-Starter\" --includeVersion --readme ./README.md ",
-    "build:functions": "cd functions && yarn build",
+    "build:docs": "typedoc --out docs --tsconfig ./tsconfig.json --categorizeByGroup true --includeDeclarations --excludeExternals --name \"NextJS-Starter\" --includeVersion --readme ./README.md ",
     "export": "next export",
     "serve": "next start",
     "serve:docs": "npx serve ./docs",
     "type-check": "tsc",
     "format": "prettier --write ./**/*/*.{jsx,js,ts,tsx}",
     "lint": "echo 'No Linting -->'",
-    "test": "jest -c jest.config.js --runInBand --detectOpenHandles --forceExit",
+    "test": "jest -c jest.config.js --forceExit",
     "test:watch": "yarn test --watch",
     "test:coverage": "yarn test --coverage",
     "predeploy": "npm-run-all -l -s format lint type-check test",
-    "use:development": "firebase use development",
-    "use:staging": "firebase use staging",
-    "use:production": "firebase use production",
-    "changelog": "git log --all --graph --decorate --oneline > CHANGELOG; git add .; git commit -m \"update changelog\"; yarn version --patch; git push --follow-tags; echo \"Released $npm_package_version\"",
     "deploy": "npm-run-all -l -s deploy:*",
-    "deploy:functions": "firebase deploy --only functions",
-    "deploy:firestore": "firebase deploy --only firestore",
-    "deploy:storage": "firebase deploy --only storage",
-    "preview": "vercel",
-    "development": "yarn use:development && yarn deploy",
-    "staging": "yarn use:staging && yarn deploy",
-    "production": "yarn use:production && yarn deploy"
+    "deploy:release": "standard-version"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
-    "@types/firebase": "^3.2.1",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "emotion-reset": "^2.0.7",
     "emotion-theming": "^10.0.27",
-    "firebase": "^8.0.0",
-    "firebase-admin": "^9.4.1",
-    "firebase-functions": "^3.11.0",
     "framer-motion": "^2.9.4",
     "next": "^10.2.0",
     "react": "^17.x.x",
     "react-dom": "^16.12.0",
-    "react-icons": "^3.11.0",
-    "sweetalert2": "^10.9.0",
-    "sweetalert2-react-content": "^3.2.2"
+    "react-icons": "^3.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -59,12 +48,13 @@
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
+    "cz-conventional-changelog": "3.3.0",
     "jest": "^26.6.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
+    "standard-version": "^9.3.1",
     "ts-jest": "^26.4.3",
     "typedoc": "^0.19.2",
     "typescript": "4.0"
-  },
-  "license": "MIT"
+  }
 }

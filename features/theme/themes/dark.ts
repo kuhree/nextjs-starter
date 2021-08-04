@@ -1,11 +1,13 @@
-import { Theme } from '../theme';
-import theme from './base';
+import { ThemeTypes } from '../theme';
+import { base } from './base';
+import { BaseTheme } from './base/index';
 
-const dark: Theme = {
-  ...theme,
-  name: 'dark',
+export type DarkTheme = BaseTheme & typeof dark;
+export const dark: BaseTheme = {
+  ...base,
+  name: ThemeTypes.DARK,
   colors: {
-    ...theme.colors,
+    ...base.colors,
     text: '#FAFAFF',
     background: '#111111',
     primary: '#7928CA',
@@ -18,5 +20,3 @@ const dark: Theme = {
     warning: '#F7B955',
   },
 };
-
-export default dark;

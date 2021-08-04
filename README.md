@@ -1,3 +1,3 @@
-# GV Starter Template
+# GVEMPIRE NextJS x Express Starter Template
 
-Starter Template using ReactJS, NextJS, GCP (Firebase), Emotion, Framer Motion
+Starter Template using ReactJS, NextJS, Axios, Emotion, and Framer Motion.

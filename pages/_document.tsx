@@ -3,7 +3,7 @@ import Document, {
   Head,
   Html,
   Main,
-  NextScript,
+  NextScript
 } from 'next/document';
 
 /**
@@ -105,10 +105,12 @@ export default class MyDocument extends Document {
             content="https://Nextjs-starter.gvempire.dev/icons/apple-touch-icon.png"
           />
         </Head>
+
         <body>
           <Main />
           <NextScript />
         </body>
+
       </Html>
     );
   }

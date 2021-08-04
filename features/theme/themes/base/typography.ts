@@ -1,39 +1,11 @@
-import { ThemeTypography } from '../../theme';
-
-const typography: ThemeTypography = {
-  letterSpacings: {
-    tighter: '-0.05em',
-    tight: '-0.025em',
-    normal: '0',
-    wide: '0.025em',
-    wider: '0.05em',
-    widest: '0.1em',
-  },
-  lineHeights: {
-    normal: 'normal',
-    none: '1',
-    shorter: '1.25',
-    short: '1.375',
-    base: '1.5',
-    tall: '1.625',
-    taller: '2',
-  },
-  fontWeights: {
-    hairline: 100,
-    thin: 200,
-    light: 300,
-    normal: 400,
-    medium: 500,
-    semibold: 600,
-    bold: 700,
-    extrabold: 800,
-    black: 900,
-  },
+export type BaseTypography = typeof typography
+export const typography = {
   fonts: {
     heading: `'Open Sans', -apple-system-headline, -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Display", sans-serif, "Segoe UI", "Apple Color Emoji"`,
     body: `'Source Sans Pro', -apple-system-body, -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Display", sans-serif, "Segoe UI", "Apple Color Emoji"`,
     mono: `SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace`,
   },
+
   fontSizes: {
     xs: '0.75rem',
     sm: '0.875rem',
@@ -46,6 +18,35 @@ const typography: ThemeTypography = {
     '5xl': '3rem',
     '6xl': '4rem',
   },
-};
 
-export default typography;
+  letterSpacings: {
+    tighter: '-0.05em',
+    tight: '-0.025em',
+    normal: '0',
+    wide: '0.025em',
+    wider: '0.05em',
+    widest: '0.1em',
+  },
+
+  lineHeights: {
+    normal: 'normal',
+    none: '1',
+    shorter: '1.25',
+    short: '1.375',
+    base: '1.5',
+    tall: '1.625',
+    taller: '2',
+  },
+
+  fontWeights: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  },
+};

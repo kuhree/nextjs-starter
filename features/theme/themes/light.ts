@@ -1,11 +1,14 @@
-import { Theme } from '../theme';
-import theme from './base';
+import { ThemeTypes } from '../theme';
+import { base } from './base';
+import { BaseTheme } from './base/index';
 
-const light: Theme = {
-  ...theme,
-  name: 'light',
+export type LightTheme = BaseTheme & typeof light;
+
+export const light: BaseTheme = {
+  ...base,
+  name: ThemeTypes.LIGHT,
   colors: {
-    ...theme.colors,
+    ...base.colors,
     background: 'hsl(275, 90%, 100%)',
     text: 'hsl(275, 0%, 10%)',
     primary: 'hsl(275, 100%, 80%)',
@@ -16,17 +19,5 @@ const light: Theme = {
     success: '#50e3c2',
     info: '#0070f3',
     warning: '#f5a623',
-    modes: {
-      dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#0fc',
-        secondary: '#0cf',
-        highlight: '#f0c',
-        muted: '#011',
-      },
-    },
   },
 };
-
-export default light;
